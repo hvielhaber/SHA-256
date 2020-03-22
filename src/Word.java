@@ -16,13 +16,7 @@ public class Word {
     public Word compl()            { return new Word((~val) & bitMask);               }
     public Word rightShift(int n)  { return new Word((val >> n) & bitMask);                       }
     public Word leftShift(int n)   { return new Word((val << n) & bitMask);           }
-    //public Word plus(Word w)       { return new Word((val + w.val) & bitMask);        }
-    public Word plus(Word w)       {
-        if (w == null) {
-            System.out.println("plus- w null");
-        }
-        return new Word((val + w.val) & bitMask);
-    }
+    public Word plus(Word w)       { return new Word((val + w.val) & bitMask);        }
     public Word leftRotate(int n)  { return new Word(((val << n) | (val >> (32 - n))) & bitMask); }
     public Word rightRotate(int n) { return new Word(((val >> n) | (val << (32 - n))) & bitMask); }
 
